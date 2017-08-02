@@ -62,19 +62,20 @@ public class MainActivity extends AppCompatActivity {
                 msgalert.setPositiveButton("yes",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-                        Toast.makeText(MainActivity.this, "Thank you! for Order", Toast.LENGTH_SHORT).show();
 
                         etname.setText("");
-//                        chcream.setChecked(false);
-//                        chchoco.setChecked(false);
+                        chcream.setChecked(false);
+                        chchoco.setChecked(false);
 //                        tvqun.setText("1");
                         ordersum.setText("$0");
+                        Toast.makeText(MainActivity.this, "Thank you! for Order", Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 msgalert.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        MainActivity.this.finish();
                     }
                 });
                 AlertDialog alertDialog = msgalert.create();
