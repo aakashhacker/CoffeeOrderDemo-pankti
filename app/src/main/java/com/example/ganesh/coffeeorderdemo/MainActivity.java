@@ -154,24 +154,37 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.item1:
+//        switch (item.getItemId()){
+//            case R.id.item1:
+//                Intent sendIntent = new Intent();
+//                sendIntent.setAction(Intent.ACTION_SEND);
+//                sendIntent.putExtra(Intent.EXTRA_SUBJECT,"Coffee Order information:");
+//                sendIntent.putExtra(Intent.EXTRA_TEXT,"\n"+pricemsg);
+//                sendIntent.setType("text/plain");
+//                startActivity(sendIntent);
+////                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+////                shareIntent.setType("text/plain");
+////                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Coffee Order information:");
+////                shareIntent.putExtra(Intent.EXTRA_TEXT,"\n"+pricemsg);
+////                startActivity(Intent.createChooser(shareIntent, "Share Via"));
+//            case R.id.item2:
+//                Intent intent=new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse("https://github.com/panktisugandhi"));
+//                startActivity(intent);
+//
+             if(item.getItemId()==R.id.item1){
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_SUBJECT,"Coffee Order information:");
                 sendIntent.putExtra(Intent.EXTRA_TEXT,"\n"+pricemsg);
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
-//                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-//                shareIntent.setType("text/plain");
-//                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Coffee Order information:");
-//                shareIntent.putExtra(Intent.EXTRA_TEXT,"\n"+pricemsg);
-//                startActivity(Intent.createChooser(shareIntent, "Share Via"));
-            case R.id.item2:
+             }
+            if (item.getItemId()==R.id.item2){
                 Intent intent=new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("https://github.com/panktisugandhi"));
                 startActivity(intent);
-        }
+            }
         return super.onOptionsItemSelected(item);
     }
 }
